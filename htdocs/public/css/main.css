@@ -1,0 +1,23 @@
+.coin_value {
+    padding: 3px 10px;
+}
+
+.coin_name_box {
+    padding: 3px 10px;
+}
+
+.del_box {
+    padding: 3px 5px;
+}
+
+#setting .item {
+    margin: 20px 10px;
+}
+
+#setting .item .full_name {
+    width: 150px;
+}
+#setting .item .abbreviation {
+    width: 50px;
+}
+

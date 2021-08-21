@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Coin Index</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Coin Index</h1>
+        
+        <table>
+            <tr>
+                <th>Coin</th>
+                <th>Value</th>
+                <th title="Delete coin">D</th>
+            </tr>
+            <tbody class="price_container">
+                
+            </tbody>
+        </table>
+        <div id="setting">
+            
+            <div class="item">
+                <form method="POST">
+                    <input type="text" name="full_name" class="full_name" placeholder="Full coin name">
+                    <input type="text" name="abbreviation" class="abbreviation" placeholder="Abbreviation of coin">
+                    <button type="submit" name="add_coin" value="Add coin" class="add_coin" onclick="return false">Add coin</button>
+                </form>
+            </div>
+            
+            <div class="item wci_key_box"></div>
+            
+        </div>
+        <script src="js/wci.js"></script>
+    </body>
+</html>
