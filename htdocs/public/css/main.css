@@ -21,3 +21,11 @@
     width: 50px;
 }
 
+#coin_index_view {
+    width: 300px;
+}
+
+#coin_index_view .date_update_coin_index {
+    text-align: right; font-size: 10px;
+}
+

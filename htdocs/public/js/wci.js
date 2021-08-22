@@ -67,10 +67,17 @@ addCoinButton.addEventListener('click', getCoin.bind(this, coinList));
 coinTableView(coinList);
 getPriceData(coinList, wciApiKey, false);
 
-
 function getPriceData(coinList, wciApiKey, sourceNecessarily) {
     let data = {};
-    if (true === sourceNecessarily && undefined !== wciApiKey) {
+    
+    let useCacheInterval = 120;
+    
+    let date = localStorage.getItem('dataSourceDate');
+    date = new Date(date);
+    let dateNow = new Date();
+    let dateDiff = Math.round((dateNow - date) / 1000);
+    
+    if (undefined !== wciApiKey && (useCacheInterval < dateDiff || true === sourceNecessarily)) {
         let url = wciUrl(coinList, wciApiKey);
         data = getDataWci(url);
     } else {
@@ -162,6 +169,7 @@ function getDataWci(url) {
 	if (xhr.readyState === 4 && xhr.status === 200) {
 	    dataRaw = xhr.response;
             localStorage.setItem('dataSource', JSON.stringify(dataRaw));
+            localStorage.setItem('dataSourceDate', new Date());
 	    setCoinPrice(dataRaw, coinList);
             //console.log(dataRaw);
 	}
@@ -190,6 +198,12 @@ function setCoinPrice(data, coinList) {
                 priceValue.innerHTML = '<a href="https://www.worldcoinindex.com/coin/' + coinName.toLowerCase() + '" target="_blank">' + roundByValue(price) + '</a>';
             }
         }
+        
+        let date = localStorage.getItem('dataSourceDate');
+        date = new Date(date);
+        let dateText = getDateTime(date);
+        let priceValue = document.querySelector('.date_update_coin_index');
+        priceValue.innerHTML = 'Last updated: ' + dateText;
     }
 }
 
@@ -226,4 +240,19 @@ function roundByValue(value) {
     } else {
         return Math.round(parseFloat(value) * 10000000) / 10000000;
     }
+}
+
+function getDateTime(date) {
+    let dd = date.getDate();
+    if (dd < 10) dd = '0' + dd;
+
+    let mm = date.getMonth() + 1;
+    if (mm < 10) mm = '0' + mm;
+
+    let yy = date.getFullYear();
+    let hh = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours();
+    let ii = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes();
+    let ss = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
+
+    return yy + '-' + mm + '-' + dd + ' ' + hh + ':' + ii + ':' + ss;
 }
