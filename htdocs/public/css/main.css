@@ -1,3 +1,19 @@
+#title_h1 {
+    font-size: 22px;
+}
+.title_h2 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.part_box {
+    display: block;
+    max-width: 300px;
+    margin: 20px 10px;
+    padding: 5px;
+    border: 1px solid gray;
+}
+
 .coin_value {
     padding: 3px 10px;
 }
@@ -11,7 +27,7 @@
 }
 
 #setting .item {
-    margin: 20px 10px;
+    margin: 10px 2px;
 }
 
 #setting .item .full_name {
@@ -22,10 +38,39 @@
 }
 
 #coin_index_view {
-    width: 300px;
+    
 }
 
 #coin_index_view .date_update_coin_index {
     text-align: right; font-size: 10px;
+}
+
+#rate_exchange_view .flex {
+    display: flex;
+}
+
+#rate_exchange_view .title_row {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#rate_exchange_view .row {
+    margin-top: 10px;
+    text-align: center;
+}
+#rate_exchange_view .row .name {
+    text-align: left;
+}
+
+#rate_exchange_view .name {
+    width: 100px;
+}
+
+#rate_exchange_view .sale {
+    width: 50px;
+}
+
+#rate_exchange_view .buy {
+    width: 50px;
 }
 

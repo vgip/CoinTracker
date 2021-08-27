@@ -203,7 +203,7 @@ function setCoinPrice(data, coinList) {
         date = new Date(date);
         let dateText = getDateTime(date);
         let priceValue = document.querySelector('.date_update_coin_index');
-        priceValue.innerHTML = 'Last updated: ' + dateText;
+        priceValue.innerHTML = 'WCI data receive: ' + dateText;
     }
 }
 

@@ -8,9 +8,13 @@
         <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Coin Index</h1>
+        <h1 id="title_h1">Dashboard</h1>
         
-        <div id="coin_index_view">
+        
+        <div id="coin_index_view" class="part_box">
+            
+        <h2 class="title_h2">Coin Index</h2>
+        
         <table>
             <tr>
                 <th>Coin</th>
@@ -24,7 +28,37 @@
         <div class="date_update_coin_index"></div>
         </div>
         
-        <div id="setting">
+        
+        <div id="rate_exchange_view" class="part_box">
+            
+            <h2 class="title_h2">Exchange rates</h2>
+            
+            <div class="title_row flex">
+                <div class="name">Name</div>
+                <div class="sale">Sale</div>
+                <div class="buy">Buy</div>
+            </div>
+            <div id="usd" class="row flex">
+                <div class="name">USD</div>
+                <div class="buy">0</div>
+                <div class="sale">0</div>
+            </div>
+            <div id="eur" class="row flex">
+                <div class="name">EUR</div>
+                <div class="buy">0</div>
+                <div class="sale">0</div>
+            </div>
+            <div id="rur" class="row flex">
+                <div class="name">RUR</div>
+                <div class="buy">0</div>
+                <div class="sale">0</div>
+            </div>
+        </div>
+        
+        
+        <div id="setting" class="part_box">
+            
+            <h2 class="title_h2">Settings</h2>
             
             <div class="item">
                 <form method="POST">
@@ -38,5 +72,6 @@
             
         </div>
         <script src="js/wci.js"></script>
+        <script src="js/pb.js"></script>
     </body>
 </html>
